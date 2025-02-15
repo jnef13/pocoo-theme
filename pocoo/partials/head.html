@@ -1,0 +1,5 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{%- for path in config.extra_css %}<link href="{{ path | url }}" rel="stylesheet">{%- endfor %}
+<link href="{{ 'stylesheets/main.css'|url }}" rel="stylesheet">
+<title>{% if page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>

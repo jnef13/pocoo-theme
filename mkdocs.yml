@@ -1,0 +1,10 @@
+site_name: Pocoo Theme
+site_url: https://jnef13.github.io/pocoo-theme/
+
+theme:
+  name: null
+  custom_dir: 'pocoo/'
+
+markdown_extensions:
+  - toc:
+      permalink: ¶
