@@ -8,10 +8,40 @@
 </head>
 
 <body>
-    {% block content %}
-        {% include 'partials/content.html' %}
-    {% endblock %}
-    {% block scripts%}
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-2">
+            {% block nav %}
+                {% if nav|length > 1 %}
+                    <ul>
+                    {% for nav_item in nav %}
+                        {% if nav_item.children %}
+                            <li>{{ nav_item.title }}
+                                <ul>
+                                {% for nav_item in nav_item.children %}
+                                    <li class="{% if nav_item.active %}current{% endif %}">
+                                        <a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
+                                    </li>
+                                {% endfor %}
+                                </ul>
+                            </li>
+                        {% else %}
+                            <li class="{% if nav_item.active %}current{% endif %}">
+                                <a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endblock %}
+        </div>
+        <div class="col-6">
+            <p>
+                {% block content %}{{ page.content }}{% endblock %}
+            </p>
+        </div>
+    </div>
+    {% block scripts %}
         {% include 'partials/scripts.html' %}
     {% endblock %}
 </body>

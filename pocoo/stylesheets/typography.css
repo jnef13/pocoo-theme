@@ -11,16 +11,19 @@ h1, h2, h3, h4, h5 {
    font-weight: 500;
    color: rgb(27, 94, 115);
    text-shadow: rgb(255, 255, 255) 2px 2px 1px;
-   background: url(../img/subheadline.png);
    padding: 3px 10px 0px;
    border-bottom: 1px dotted rgb(189, 218, 227);
    margin: 15px -10px 10px;
+   background: url(../img/subheadline.png);
 }
 
-.headerlink {
-   opacity: 0;
+a.headerlink {
+   color: #DDD;
+   padding: 0 4px;
+   text-decoration: none;
 }
 
-.headerlink:hover {
-   opacity: 1;
+a.headerlink:hover {
+   color: #444;
+   background: #EAEAEA;
 }
